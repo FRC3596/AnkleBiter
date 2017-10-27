@@ -13,8 +13,14 @@ public class Wheel_Shooter extends Subsystem {
 	public void initDefaultCommand() {
 	}
 	public void forward(){
-		left_wheel.set(1);
-		right_wheel.set(1);
+		left_wheel.set(.5);
+		right_wheel.set(-.5);
+	}
+	
+	public void stop(){
+		left_wheel.set(0);
+		right_wheel.set(0);
+		
 	}
 	
 } 

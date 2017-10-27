@@ -18,7 +18,7 @@ public class OI {
 		
 		JoystickButton lb = new JoystickButton(joy, 4);
 		JoystickButton rb = new JoystickButton(joy, 5);
-		JoystickButton x = new JoystickButton(joy, 0);
+		JoystickButton x = new JoystickButton(joy, 1);
 
 		lb.whenPressed(new ExtendCylinder());
 		rb.whenPressed(new RetractCylinder());
