@@ -19,9 +19,9 @@ public class Wheel_Shooter extends Subsystem {
 		left_wheel.set(.5);
 		right_wheel.set(-.5);
 		
-		if (left_wheel.equals(.5) && (right_wheel.equals(-.5))) {
+		// if (left_wheel.equals(.5) && (right_wheel.equals(-.5))) {
 		loader.set(Value.kOn);
-		}
+		// }
 	}
 	
 	public void stop(){
