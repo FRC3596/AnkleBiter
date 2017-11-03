@@ -3,6 +3,7 @@ package org.usfirst.frc.team3596.robot;
 import org.usfirst.frc.team3596.robot.commands.ExtendCylinder;
 import org.usfirst.frc.team3596.robot.commands.RetractCylinder;
 import org.usfirst.frc.team3596.robot.commands.wheelFire;
+import org.usfirst.frc.team3596.robot.subsystems.Wheel_Shooter;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -16,6 +17,7 @@ public class OI {
 
 	public OI(){
 		JoystickButton x = new JoystickButton(joy, 1);
+
 		JoystickButton a = new JoystickButton(joy, 2);
 		JoystickButton b = new JoystickButton(joy, 3);
 		JoystickButton y = new JoystickButton(joy, 4);

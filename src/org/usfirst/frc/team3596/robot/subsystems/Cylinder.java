@@ -8,8 +8,10 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Cylinder extends Subsystem {
-	Solenoid pistonExtend = new Solenoid(50, 1);
-	Solenoid pistonRetract = new Solenoid(50, 0);
+
+	// Solenoid(CAN ID, PCM channel);
+	Solenoid pistonExtend = new Solenoid(50, 0);
+	Solenoid pistonRetract = new Solenoid(50, 1);
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
