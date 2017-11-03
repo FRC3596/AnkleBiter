@@ -2,27 +2,29 @@ package org.usfirst.frc.team3596.robot.commands;
 
 import org.usfirst.frc.team3596.robot.Robot;
 
-import edu.wpi.first.wpilibj.command.TimedCommand;
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class RetractCylinder extends TimedCommand{
+public class RetractCylinder extends Command{
 
-    public RetractCylinder() {
-    	super(1);
-    	requires(Robot.cylinder);
-    }
+	public RetractCylinder() {
+		requires(Robot.cylinder);
+	}
 
-    // Called just before this Command runs the first time
-    protected void initialize() {
-    	Robot.cylinder.retract();
-    }
+	// Called just before this Command runs the first time
+	protected void initialize() {
+		Robot.cylinder.retract();
+	}
+	
+	protected boolean isFinished(){
+		return false;
+	}
 
-
-    // Called once after isFinished returns true
-    protected void end() {
-    	 Robot.cylinder.retractOff();
-    }
+	// Called once after isFinished returns true
+	protected void end() {
+		Robot.cylinder.retractOff();
+	}
 
 }
