@@ -16,7 +16,7 @@ public class wheelFire extends Command {
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
-		Robot.wheelShooter.forward();
+		Robot.wheelShooter.enable();
 		
 	}
 
