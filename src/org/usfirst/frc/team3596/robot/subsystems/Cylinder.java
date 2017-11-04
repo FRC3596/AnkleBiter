@@ -30,8 +30,7 @@ public class Cylinder extends Subsystem {
     public void extendOff(){
     	pistonExtend.set(false);//turns off piston after actuated^
     }
-    
-    
+ 
     public void retract(){
     	pistonExtend.set(true);
     }
