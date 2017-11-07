@@ -24,6 +24,9 @@ public class Wheel_Shooter extends Subsystem {
 		loader.set(Value.kForward);
 		// }
 	}
+	public void reverse(){
+		//loader.
+		}
 	
 	public void stop(){
 		// Sets the motors and relays to zero.
