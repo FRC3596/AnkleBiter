@@ -2,9 +2,7 @@ package org.usfirst.frc.team3596.robot;
 
 import org.usfirst.frc.team3596.robot.commands.CylinderOff;
 import org.usfirst.frc.team3596.robot.commands.ExtendCylinder;
-import org.usfirst.frc.team3596.robot.commands.ExtendedOff;
 import org.usfirst.frc.team3596.robot.commands.RetractCylinder;
-import org.usfirst.frc.team3596.robot.commands.RetractedOff;
 import org.usfirst.frc.team3596.robot.commands.wheelFire;
 import org.usfirst.frc.team3596.robot.subsystems.Wheel_Shooter;
 
@@ -34,9 +32,8 @@ public class OI {
 		JoystickButton rsb = new JoystickButton(joy, 12);
 
 		lb.whenPressed(new ExtendCylinder());
-		lb.whenReleased(new CylinderOff() );
 		rb.whenPressed(new RetractCylinder());
-		rb.whenReleased(new CylinderOff() );
+		
 		
 		x.toggleWhenPressed(new wheelFire());
 
