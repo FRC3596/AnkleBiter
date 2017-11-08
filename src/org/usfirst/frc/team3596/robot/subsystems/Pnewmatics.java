@@ -16,22 +16,20 @@ public class Pnewmatics extends Subsystem {
 		if (Robot.isReal()) {
 			compressor = new Compressor(50);
 		}
-
 	}
 
+	public void initDefaultCommand() {
+	}
 
-    public void initDefaultCommand() {
-    }
-    
-    public void start() {
-		if (compressor.getPressureSwitchValue()) {//.isReal() is when Robot start up
+	public void start() {
+		if (compressor.getPressureSwitchValue()) {
 			compressor.start();
 		}
 		else
 			compressor.stop();
 	}
-    public void stop(){
-    	compressor.stop();
-    }
+	public void stop(){
+		compressor.stop();
+	}
 }
 
