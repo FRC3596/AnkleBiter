@@ -31,8 +31,11 @@ public class OI {
 		JoystickButton lsb = new JoystickButton(joy, 11);
 		JoystickButton rsb = new JoystickButton(joy, 12);
 
-		lb.whenPressed(new ExtendCylinder());
-		rb.whenPressed(new RetractCylinder());
+		lb.whenActive(new ExtendCylinder());
+		lb.whenInactive(new CylinderOff());
+		
+		rb.whenActive(new RetractCylinder());
+		rb.whenInactive(new CylinderOff());
 		
 		
 		x.toggleWhenPressed(new wheelFire());

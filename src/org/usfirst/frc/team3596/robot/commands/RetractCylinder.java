@@ -2,12 +2,12 @@ package org.usfirst.frc.team3596.robot.commands;
 
 import org.usfirst.frc.team3596.robot.Robot;
 
-import edu.wpi.first.wpilibj.command.InstantCommand;
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class RetractCylinder extends InstantCommand{
+public class RetractCylinder extends Command{
 
 	public RetractCylinder() {
 		requires(Robot.cylinder);
@@ -17,7 +17,9 @@ public class RetractCylinder extends InstantCommand{
 	protected void initialize() {
 		Robot.cylinder.retract();
 	}
-	
+	protected boolean isFinished(){
+		return false;
+	}
 	// Called once after isFinished returns true
 	protected void end() {
 		Robot.cylinder.cylinderOff();
