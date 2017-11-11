@@ -2,45 +2,40 @@ package org.usfirst.frc.team3596.robot.subsystems;
 
 import org.usfirst.frc.team3596.robot.Robot;
 
-import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  *
  */
 public class Pnewmatics extends Subsystem {
-	AnalogInput pressureSensor = new AnalogInput(3);
 	Compressor compressor;
+	Timer timer;
+	
 
-	private static final double kMaxPressure = 2.55;
 
 	public Pnewmatics() {
 		if (Robot.isReal()) {
-			compressor = new Compressor();
+			compressor = new Compressor(50);
+			timer = new Timer();
+			
 		}
-
-		
 	}
 
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
+	public void initDefaultCommand() {
+	}
 
-    public void initDefaultCommand() {
-    }
-    
-    public void start() {
-		if (Robot.isReal()) {//.isReal() is when Robot start up
+	public void start() {
+		if (compressor.getPressureSwitchValue()) {
+			Timer.delay(30);
 			compressor.start();
 		}
+		else
+			compressor.stop();
 	}
-   
-    public boolean isPressurized() {
-		if (Robot.isReal()) {
-			return kMaxPressure <= pressureSensor.getVoltage();
-		} else {
-			return true; // NOTE: Simulation always has full pressure
-		}
+	public void stop(){
+		compressor.stop();
 	}
 }
 
