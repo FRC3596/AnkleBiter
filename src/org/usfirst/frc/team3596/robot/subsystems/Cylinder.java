@@ -11,8 +11,6 @@ public class Cylinder extends Subsystem {
 
 	// Solenoid(CAN ID, PCM channel);
 	Solenoid extend = new Solenoid(50, 0);
-	Solenoid retract = new Solenoid(50, 1);
-	
 
     public void initDefaultCommand() {
 
@@ -26,11 +24,8 @@ public class Cylinder extends Subsystem {
     }
     public void cylinderOff(){
     	extend.set(false);//turns off piston after actuated^
-    	retract.set(false);
-    }
-    public void retract(){
-    	retract.set(true);
-    }
+    	}
+
 
     
 }

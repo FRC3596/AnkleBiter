@@ -10,7 +10,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team3596.robot.subsystems.Cylinder;
 import org.usfirst.frc.team3596.robot.subsystems.Drivetrain;
-import org.usfirst.frc.team3596.robot.subsystems.Pnewmatics;
 import org.usfirst.frc.team3596.robot.subsystems.Wheel_Shooter;
 
 /**
@@ -24,7 +23,6 @@ public class Robot extends IterativeRobot {
 	public static Drivetrain drivetrain;
 	public static Cylinder cylinder;
 	public static Wheel_Shooter wheelShooter;
-	public static Pnewmatics compressor;
 	public static OI oi;
 	
 
@@ -40,11 +38,13 @@ public class Robot extends IterativeRobot {
 		drivetrain = new Drivetrain();
 		cylinder = new Cylinder();
 		wheelShooter = new Wheel_Shooter();
-		compressor = new Pnewmatics();
 		oi = new OI();
-		
+		log();
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
+		SmartDashboard.putData(drivetrain);
+		SmartDashboard.putData(cylinder);
+		SmartDashboard.putData(wheelShooter);
 	}
 
 	/**
@@ -113,6 +113,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		log();
 	}
 
 	/**
@@ -121,5 +122,8 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void testPeriodic() {
 		LiveWindow.run();
+	}
+	public void log(){
+		
 	}
 }

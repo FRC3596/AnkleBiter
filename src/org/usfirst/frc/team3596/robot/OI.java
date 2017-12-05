@@ -2,9 +2,7 @@ package org.usfirst.frc.team3596.robot;
 
 import org.usfirst.frc.team3596.robot.commands.CylinderOff;
 import org.usfirst.frc.team3596.robot.commands.ExtendCylinder;
-import org.usfirst.frc.team3596.robot.commands.RetractCylinder;
 import org.usfirst.frc.team3596.robot.commands.wheelFire;
-import org.usfirst.frc.team3596.robot.subsystems.Wheel_Shooter;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -33,10 +31,7 @@ public class OI {
 
 		lb.whenActive(new ExtendCylinder());
 		lb.whenInactive(new CylinderOff());
-		
-		rb.whenActive(new RetractCylinder());
-		rb.whenInactive(new CylinderOff());
-		
+
 		
 		x.toggleWhenPressed(new wheelFire());
 
