@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Cylinder extends Subsystem {
 
 	// Solenoid(CAN ID, PCM channel);
-	Solenoid extend = new Solenoid(50, 0);
+	Solenoid extend = new Solenoid(0, 0);
 
     public void initDefaultCommand() {
 

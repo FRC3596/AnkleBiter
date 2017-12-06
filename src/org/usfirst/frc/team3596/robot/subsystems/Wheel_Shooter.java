@@ -14,8 +14,8 @@ public class Wheel_Shooter extends Subsystem {
 	public void initDefaultCommand() {
 	}
 	public void enable(){
-		left_wheel.set(.5);
-		right_wheel.set(-.5);
+		left_wheel.set(.65);
+		right_wheel.set(-.65);
 
 	}
 

@@ -35,6 +35,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
+		
 		drivetrain = new Drivetrain();
 		cylinder = new Cylinder();
 		wheelShooter = new Wheel_Shooter();
