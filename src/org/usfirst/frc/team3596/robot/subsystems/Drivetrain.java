@@ -3,21 +3,23 @@ package org.usfirst.frc.team3596.robot.subsystems;
 //import org.usfirst.frc.team3596.robot.RobotMap;
 import org.usfirst.frc.team3596.robot.commands.TankDrive_Joystick;
 
-import com.ctre.CANTalon;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 public class Drivetrain extends Subsystem {
-	CANTalon frontLeftMotor = new CANTalon(1);
-	CANTalon frontRightMotor = new CANTalon(2);
-	CANTalon backLeftMotor = new CANTalon(3);
-	CANTalon backRightMotor = new CANTalon(4);
+	WPI_TalonSRX frontLeftMotor = new WPI_TalonSRX(1);
+	WPI_TalonSRX frontRightMotor = new WPI_TalonSRX(2);
+	WPI_TalonSRX backLeftMotor = new WPI_TalonSRX(3);
+	WPI_TalonSRX backRightMotor = new WPI_TalonSRX(4);
 	
+	SpeedControllerGroup leftMotors = new SpeedControllerGroup(frontLeftMotor, backLeftMotor);
+	SpeedControllerGroup rightMotors = new SpeedControllerGroup(frontRightMotor,backRightMotor);
 	
-	
-	RobotDrive drive = new RobotDrive(frontLeftMotor,frontRightMotor,backLeftMotor,backRightMotor);
+	DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
