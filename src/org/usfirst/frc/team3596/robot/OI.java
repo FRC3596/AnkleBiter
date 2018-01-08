@@ -1,11 +1,10 @@
 package org.usfirst.frc.team3596.robot;
 
-import org.usfirst.frc.team3596.robot.commands.CylinderOff;
-import org.usfirst.frc.team3596.robot.commands.ExtendCylinder;
-import org.usfirst.frc.team3596.robot.commands.wheelFire;
+
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -14,32 +13,54 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {
 	private Joystick joy = new Joystick(0);
 
+	JoystickButton X = new JoystickButton(joy, 1);
+	JoystickButton A = new JoystickButton(joy, 2);
+	JoystickButton B = new JoystickButton(joy, 3);
+	JoystickButton Y = new JoystickButton(joy, 4);
+	JoystickButton LB = new JoystickButton(joy, 5);
+	JoystickButton RB = new JoystickButton(joy, 6);
+	JoystickButton LT = new JoystickButton(joy, 7);
+	JoystickButton RT = new JoystickButton(joy, 8);
+	JoystickButton BACK = new JoystickButton(joy, 9);
+	JoystickButton START = new JoystickButton(joy, 10);
+	JoystickButton LSB = new JoystickButton(joy, 11);
+	JoystickButton RSB = new JoystickButton(joy, 12);
+	
+	double LEFT_X_AXIS = joy.getRawAxis(0);
+	double LEFT_Y_AXIS = joy.getRawAxis(1);
+	double RIGHT_X_AXIS = joy.getRawAxis(2);
+	double RIGHT_Y_AXIS = joy.getRawAxis(3);
+
 	public OI(){
-		JoystickButton x = new JoystickButton(joy, 1);
-
-		JoystickButton a = new JoystickButton(joy, 2);
-		JoystickButton b = new JoystickButton(joy, 3);
-		JoystickButton y = new JoystickButton(joy, 4);
-		JoystickButton lb = new JoystickButton(joy, 5);
-		JoystickButton rb = new JoystickButton(joy, 6);
-		JoystickButton lt = new JoystickButton(joy, 7);
-		JoystickButton rt = new JoystickButton(joy, 8);
-		JoystickButton back = new JoystickButton(joy, 9);
-		JoystickButton start = new JoystickButton(joy, 10);
-		JoystickButton lsb = new JoystickButton(joy, 11);
-		JoystickButton rsb = new JoystickButton(joy, 12);
-
-		lb.whenActive(new ExtendCylinder());
-		lb.whenInactive(new CylinderOff());
-
-		
-		x.toggleWhenPressed(new wheelFire());
-
-
+		// Put Command triggers Here
 	}
 
 	public Joystick getJoystick() {
 		return joy;
+	}
+
+	public void log(){
+
+		SmartDashboard.putBoolean("X Button", X.get());
+		SmartDashboard.putBoolean("A Button", A.get());
+		SmartDashboard.putBoolean("B Button", B.get());
+		SmartDashboard.putBoolean("Y Button", Y.get());
+		SmartDashboard.putBoolean("LB Button", LB.get());
+		SmartDashboard.putBoolean("RB Button", RB.get());
+		SmartDashboard.putBoolean("LT Button", LT.get());
+		SmartDashboard.putBoolean("RT Button", RT.get());
+		SmartDashboard.putBoolean("BACK Button", BACK.get());
+		SmartDashboard.putBoolean("START Button", START.get());
+		SmartDashboard.putBoolean("LSB Button", LSB.get());
+		SmartDashboard.putBoolean("RSB Button", RSB.get());
+		
+		SmartDashboard.putNumber("Left X Axis", LEFT_X_AXIS);
+		SmartDashboard.putNumber("Left Y Axis", LEFT_Y_AXIS);
+		SmartDashboard.putNumber("Right X Axis", RIGHT_X_AXIS);
+		SmartDashboard.putNumber("Right Y Axis", RIGHT_Y_AXIS);
+		
+
+
 	}
 
 
