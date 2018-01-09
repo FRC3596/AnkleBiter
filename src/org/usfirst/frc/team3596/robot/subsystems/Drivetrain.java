@@ -12,9 +12,10 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 public class Drivetrain extends Subsystem {
 	WPI_TalonSRX frontLeftMotor = new WPI_TalonSRX(1);
-	WPI_TalonSRX frontRightMotor = new WPI_TalonSRX(2);
-	WPI_TalonSRX backLeftMotor = new WPI_TalonSRX(3);
+	WPI_TalonSRX backLeftMotor = new WPI_TalonSRX(2);
+	WPI_TalonSRX frontRightMotor = new WPI_TalonSRX(3);
 	WPI_TalonSRX backRightMotor = new WPI_TalonSRX(4);
+		
 	
 	SpeedControllerGroup leftMotors = new SpeedControllerGroup(frontLeftMotor, backLeftMotor);
 	SpeedControllerGroup rightMotors = new SpeedControllerGroup(frontRightMotor,backRightMotor);
